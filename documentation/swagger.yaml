@@ -18,6 +18,44 @@ paths:
           content:
             application/json:
               schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      tags:
+      - Users
+      description: returns a user by id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/users_body'
+      responses:
+        "200":
+          description: New user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /users/{id}:
+    get:
+      tags:
+      - Users
+      description: returns a user by id
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: The user
+          content:
+            application/json:
+              schema:
                 $ref: '#/components/schemas/User'
 components:
   schemas:
@@ -35,3 +73,10 @@ components:
         email:
           type: string
       description: a single user
+    users_body:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
