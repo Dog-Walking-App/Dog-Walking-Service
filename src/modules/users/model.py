@@ -9,5 +9,9 @@ class User(Base):  # pylint: disable=too-few-public-methods
     name = Column(String)
     email = Column(String)
 
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
     def as_dict(self):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
