@@ -1,6 +1,6 @@
 from flask import Flask, send_from_directory
 from flask_swagger_ui import get_swaggerui_blueprint
-from src.modules.users.controller import blueprint as users_blueprint
+from src.modules.users.blueprint import blueprint as users_blueprint
 
 app = Flask(__name__)
 
