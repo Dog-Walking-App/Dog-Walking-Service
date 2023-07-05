@@ -1,5 +1,4 @@
 from typing import List
-from .IUsersService import IUsersService
 
 
 class MockUser:  # pylint: disable=too-few-public-methods
@@ -16,7 +15,7 @@ class MockUser:  # pylint: disable=too-few-public-methods
         }
 
 
-class UsersServiceMock(IUsersService):
+class UsersServiceMock:
     def __init__(self):
         self.users = [
             MockUser(1, "Alice", "alice@example.com"),

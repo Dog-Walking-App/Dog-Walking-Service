@@ -1,17 +1,30 @@
-from typing import List  # pylint: disable=invalid-name
+from typing import List
 from abc import ABC, abstractmethod
-from ..model import User
+
+
+class IUser(ABC):
+    id: int
+    name: str
+    email: str
+
+    @abstractmethod
+    def __init__(self, name: str, email: str) -> None:
+        pass
+
+    @abstractmethod
+    def as_dict(self):
+        pass
 
 
 class IUsersService(ABC):
     @abstractmethod
-    def find_all(self) -> List[User]:
+    def find_all(self) -> List[IUser]:
         pass
 
     @abstractmethod
-    def find_one(self, user_id: str) -> User | None:
+    def find_one(self, user_id: str) -> IUser | None:
         pass
 
     @abstractmethod
-    def create(self, name: str, email: str) -> User:
+    def create(self, name: str, email: str) -> IUser:
         pass

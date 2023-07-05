@@ -1,6 +1,6 @@
 from marshmallow import Schema, fields, validate
 from ....utils.validate_json import validate_json
-from ..service.service import IUsersService
+from ..service.IUsersService import IUsersService
 from ....http import Http, Controller
 
 
