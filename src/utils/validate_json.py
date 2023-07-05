@@ -10,6 +10,10 @@ def validate_json(schema: Schema):
                 schema.load(raw_data)
                 return function(self, *args, **kwargs)
             except ValidationError as error:
-                return self.response.send(message="Invalid data", error=error.messages, status_code=400)
+                return self.response.send(
+                    message="Invalid data",
+                    error=error.messages,
+                    status_code=400,
+                )
         return wrapper
     return decorator
