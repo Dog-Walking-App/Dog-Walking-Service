@@ -15,5 +15,6 @@ def validate_json(schema: Schema):
                     error=error.messages,
                     status_code=400,
                 )
+        wrapper.__name__ = function.__name__
         return wrapper
     return decorator
