@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String
 from ...db.engine import Base
 
 
-class User(Base):  # pylint: disable=too-few-public-methods
+class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)

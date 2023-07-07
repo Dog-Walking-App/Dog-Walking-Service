@@ -1,8 +1,6 @@
-from flask import Flask, send_from_directory
+from flask import send_from_directory
 from flask_swagger_ui import get_swaggerui_blueprint
-from src.modules.users.blueprint import blueprint as users_blueprint
-
-app = Flask(__name__)
+from src.app import app
 
 
 @app.route("/api/spec")
@@ -19,6 +17,3 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 )
 
 app.register_blueprint(swaggerui_blueprint)
-
-
-app.register_blueprint(users_blueprint, url_prefix="/users")

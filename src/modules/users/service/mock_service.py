@@ -1,7 +1,7 @@
 from typing import List
 
 
-class MockUser:  # pylint: disable=too-few-public-methods
+class MockUser:
     def __init__(self, user_id, name, email):
         self.id = user_id  # pylint: disable=C0103
         self.name = name

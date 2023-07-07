@@ -37,7 +37,7 @@ def test_get_one_invalid():
 
 
 # Test the create function with valid data
-def test_create_valid():  # pylint: disable=W0621
+def test_create_valid():
     request_mock.get_json = MagicMock(
         return_value={"name": "David", "email": "david@example.com"})
     response = controller.create()
@@ -49,7 +49,7 @@ def test_create_valid():  # pylint: disable=W0621
 
 
 # Test the create function with invalid data
-def test_create_invalid():  # pylint: disable=W0621
+def test_create_invalid():
     request_mock.get_json = MagicMock(
         return_value={"name": "", "email": ""})
     response = controller.create()
