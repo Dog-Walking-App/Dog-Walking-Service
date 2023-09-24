@@ -94,7 +94,6 @@ class HTTPService:
         return decorator
 
     def build(self, blueprint, controller):
-        print(self.items)
         for item in self.items:
             blueprint.add_url_rule(
                 item["url"],
